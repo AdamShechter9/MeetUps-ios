@@ -15,6 +15,7 @@
 		A52F63A91D40404E0044BFEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52F63A71D40404E0044BFEC /* LaunchScreen.storyboard */; };
 		A52F63B41D40404E0044BFEC /* coreLocationProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52F63B31D40404E0044BFEC /* coreLocationProjectTests.swift */; };
 		A52F63BF1D40404E0044BFEC /* coreLocationProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52F63BE1D40404E0044BFEC /* coreLocationProjectUITests.swift */; };
+		A52F63CD1D4040AE0044BFEC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52F63CC1D4040AE0044BFEC /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		A52F63BA1D40404E0044BFEC /* coreLocationProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = coreLocationProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A52F63BE1D40404E0044BFEC /* coreLocationProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coreLocationProjectUITests.swift; sourceTree = "<group>"; };
 		A52F63C01D40404E0044BFEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A52F63CC1D4040AE0044BFEC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A52F63CD1D4040AE0044BFEC /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +82,7 @@
 		A52F638F1D40404D0044BFEC = {
 			isa = PBXGroup;
 			children = (
+				A52F63CC1D4040AE0044BFEC /* MapKit.framework */,
 				A52F639A1D40404E0044BFEC /* coreLocationProject */,
 				A52F63B21D40404E0044BFEC /* coreLocationProjectTests */,
 				A52F63BD1D40404E0044BFEC /* coreLocationProjectUITests */,
@@ -196,6 +200,11 @@
 				TargetAttributes = {
 					A52F63971D40404D0044BFEC = {
 						CreatedOnToolsVersion = 7.3.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					A52F63AE1D40404E0044BFEC = {
 						CreatedOnToolsVersion = 7.3.1;
