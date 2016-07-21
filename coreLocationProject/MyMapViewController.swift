@@ -21,7 +21,27 @@ class MyMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVie
     var longitudeDelta = 1.0
     var PinsAnnotationArr = [MKPointAnnotation]()
     
+    var dummylocation1Flag = false
+    var dummylocation2Flag = false
+    
     @IBOutlet weak var mapView: MKMapView!
+    
+    @IBOutlet weak var dummyLocation1: UIBarButtonItem!
+    @IBAction func dummyLocation1Pressed(sender: UIBarButtonItem) {
+        if !dummylocation1Flag
+        {
+            self.addPinsToMap(37.377034, longitude: -121.912302, title: "Coding Dojo", subtitle: "Coding Hackathon Party")
+        }
+        dummylocation1Flag = true
+    }
+    
+    @IBAction func dummyLocation2Pressed(sender: UIBarButtonItem) {
+        if !dummylocation2Flag
+        {
+            self.addPinsToMap(37.421385, longitude: -122.088882, title: "GooglePlex", subtitle: "Google Coding Party")
+        }
+        dummylocation2Flag = true
+    }
     
     @IBAction func zoomIn(sender: UIBarButtonItem) {
         latitudeDelta *= 0.1
@@ -46,6 +66,8 @@ class MyMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVie
         locationManager.requestAlwaysAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
+        
+        self.addPinsToMap(37.421385, longitude: -122.088882, title: "GooglePlex", subtitle: "Google Coding Party")
     }
     
     func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
@@ -102,8 +124,8 @@ class MyMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVie
         
 
         // annotationPoint.coordinate = annotationCoord
-        // annotationPoint.coordinate.latitude = 37.377034
-        // annotationPoint.coordinate.longitude = -121.912302
+        // annotationPoint.coordinate.latitude =
+        // annotationPoint.coordinate.longitude =
         // annotationPoint.title = "Coding Dojo"
         // annotationPoint.subtitle = "Meetup Right now"
         annotationPoint.coordinate.latitude = latitude
