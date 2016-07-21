@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FFC6FBE1D414E9500EA6646 /* CancelButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFC6FBD1D414E9500EA6646 /* CancelButtonDelegate.swift */; };
+		0FFC6FC01D41505800EA6646 /* AddMeetUpButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFC6FBF1D41505800EA6646 /* AddMeetUpButtonDelegate.swift */; };
 		A5257BD91D40B53E0093C310 /* AddMeetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5257BD81D40B53E0093C310 /* AddMeetupViewController.swift */; };
 		A52F639C1D40404E0044BFEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52F639B1D40404E0044BFEC /* AppDelegate.swift */; };
 		A52F639E1D40404E0044BFEC /* MyLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52F639D1D40404E0044BFEC /* MyLocationViewController.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0FFC6FBD1D414E9500EA6646 /* CancelButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelButtonDelegate.swift; sourceTree = "<group>"; };
+		0FFC6FBF1D41505800EA6646 /* AddMeetUpButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMeetUpButtonDelegate.swift; sourceTree = "<group>"; };
 		A5257BD81D40B53E0093C310 /* AddMeetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMeetupViewController.swift; sourceTree = "<group>"; };
 		A52F63981D40404D0044BFEC /* coreLocationProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coreLocationProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A52F639B1D40404E0044BFEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,9 +87,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FFC6FBC1D414E5D00EA6646 /* delegates */ = {
+			isa = PBXGroup;
+			children = (
+				0FFC6FBD1D414E9500EA6646 /* CancelButtonDelegate.swift */,
+				0FFC6FBF1D41505800EA6646 /* AddMeetUpButtonDelegate.swift */,
+			);
+			name = delegates;
+			sourceTree = "<group>";
+		};
 		A52F638F1D40404D0044BFEC = {
 			isa = PBXGroup;
 			children = (
+				0FFC6FBC1D414E5D00EA6646 /* delegates */,
 				A52F63CC1D4040AE0044BFEC /* MapKit.framework */,
 				A52F639A1D40404E0044BFEC /* coreLocationProject */,
 				A52F63B21D40404E0044BFEC /* coreLocationProjectTests */,
@@ -275,7 +289,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A52F639E1D40404E0044BFEC /* MyLocationViewController.swift in Sources */,
+				0FFC6FC01D41505800EA6646 /* AddMeetUpButtonDelegate.swift in Sources */,
 				A52F63A41D40404E0044BFEC /* coreLocationProject.xcdatamodeld in Sources */,
+				0FFC6FBE1D414E9500EA6646 /* CancelButtonDelegate.swift in Sources */,
 				A5257BD91D40B53E0093C310 /* AddMeetupViewController.swift in Sources */,
 				A52F639C1D40404E0044BFEC /* AppDelegate.swift in Sources */,
 				A52F63CF1D407C6A0044BFEC /* MyMapViewController.swift in Sources */,
@@ -424,7 +440,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = coreLocationProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = adam.s.develops.coreLocationProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jdcp.coreLocationProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -435,7 +451,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = coreLocationProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = adam.s.develops.coreLocationProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jdcp.coreLocationProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
