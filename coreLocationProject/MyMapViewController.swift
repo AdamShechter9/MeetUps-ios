@@ -27,7 +27,7 @@ class MyMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVie
     ]
     
     var dummylocation1Flag = false
-    var dummylocation2Flag = false
+    var zoomFirstFlag = true
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -41,7 +41,6 @@ class MyMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVie
             let subtitle = String(location["subtitle"]!)
             addPinsToMap(latitude!, longitude: longitude!, title: title, subtitle: subtitle)
         }
-        
         
     }
     
@@ -118,7 +117,18 @@ class MyMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVie
                 // let zip = pm.addressDictionary!["ZIP"]
                 // print("\(street!), \(city!), \(state!), \(zip!)")
                 // self.addressLabel.text = "\(street!), \(city!), \(state!), \(zip!)"
-
+                if self.zoomFirstFlag
+                {
+                    let userLocation = self.mapView.userLocation
+                    if userLocation.location != nil
+                    {
+                        let region = MKCoordinateRegionMakeWithDistance(
+                            userLocation.location!.coordinate, 20000, 20000)
+                        
+                        self.mapView.setRegion(region, animated: true)
+                        self.zoomFirstFlag = false
+                    }
+                }
             }
             else {
                 print("Problem with the data received from geocoder")
