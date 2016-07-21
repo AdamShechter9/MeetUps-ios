@@ -236,12 +236,12 @@
                                             <action selector="zoomOut:" destination="d4a-Dq-S5B" id="meP-p1-djo"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="add dummy location 1" id="tQm-0O-ofF">
+                                    <barButtonItem title="loc 1" id="tQm-0O-ofF">
                                         <connections>
                                             <action selector="dummyLocation1Pressed:" destination="d4a-Dq-S5B" id="ipE-aH-QQ3"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="add dummy location 2" id="UZK-yj-Z5q">
+                                    <barButtonItem title="loc 2" id="UZK-yj-Z5q">
                                         <connections>
                                             <action selector="dummyLocation2Pressed:" destination="d4a-Dq-S5B" id="luF-TR-Mc9"/>
                                         </connections>

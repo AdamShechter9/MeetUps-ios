@@ -58,7 +58,8 @@ class MyLocationViewController: UIViewController, CLLocationManagerDelegate {
             else {
                 print("Problem with the data received from geocoder")
             }
-        })    }
+        })
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
