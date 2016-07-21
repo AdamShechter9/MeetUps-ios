@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class MyMapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate
+class MyMapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, CancelButtonDelegate, AddMeetUpButtonDelegate
 {
     
     let locationManager = CLLocationManager()
@@ -44,7 +44,21 @@ class MyMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVie
         
     }
     
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print ("yo")
+        if segue.identifier == "addMeetupSegue"{
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let addPinViewController = navigationController.topViewController as! AddMeetupViewController
+            addPinViewController.cancelButtonDelegate = self
+            addPinViewController.addMeetUpButtonDelegate = self
+        }
+    }
+    func cancelButtonPressedFrom(controller: UIViewController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    func addMeetUpButtonPressedFrom(controller: UIViewController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     @IBAction func zoomIn(sender: UIBarButtonItem) {
         latitudeDelta *= 0.1
         longitudeDelta *= 0.1
