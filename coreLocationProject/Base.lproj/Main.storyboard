@@ -241,11 +241,6 @@
                                             <action selector="dummyLocation1Pressed:" destination="d4a-Dq-S5B" id="ipE-aH-QQ3"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="loc 2" id="UZK-yj-Z5q">
-                                        <connections>
-                                            <action selector="dummyLocation2Pressed:" destination="d4a-Dq-S5B" id="luF-TR-Mc9"/>
-                                        </connections>
-                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -348,10 +343,10 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Aaw-gr-p9b">
-                                <rect key="frame" x="244" y="168" width="203" height="30"/>
+                                <rect key="frame" x="244" y="168" width="192" height="21"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixV-55-ZQf">
-                                        <rect key="frame" x="0.0" y="0.0" width="38" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixV-55-ZQf">
+                                        <rect key="frame" x="0.0" y="0.0" width="27" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ixV-55-ZQf" secondAttribute="height" multiplier="19:15" id="hwt-mh-5xL"/>
                                         </constraints>
@@ -359,8 +354,8 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mh0-bx-uFF">
-                                        <rect key="frame" x="58" y="0.0" width="145" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mh0-bx-uFF">
+                                        <rect key="frame" x="47" y="0.0" width="145" height="21"/>
                                         <color key="backgroundColor" red="0.62574944560000001" green="0.99607843139999996" blue="0.81514983050000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="145" id="lSK-dS-40y"/>
@@ -423,15 +418,23 @@
                                     <barButtonItem title="cancel" id="QAn-JM-Ha5"/>
                                 </items>
                             </toolbar>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="DxB-eO-ACs">
+                                <rect key="frame" x="0.0" y="384" width="600" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="490817129.44458997">
+                                    <!--2016-07-21 18:05:29 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="TdX-cW-jLl" firstAttribute="centerX" secondItem="5rH-lf-Mvs" secondAttribute="centerX" id="09J-Rk-JL6"/>
+                            <constraint firstItem="EFb-i9-rI4" firstAttribute="top" secondItem="DxB-eO-ACs" secondAttribute="bottom" id="2nj-eo-dj7"/>
                             <constraint firstItem="IIS-zA-SBZ" firstAttribute="leading" secondItem="5rH-lf-Mvs" secondAttribute="leadingMargin" constant="-20" id="8tP-ML-D5y"/>
                             <constraint firstAttribute="trailingMargin" secondItem="IIS-zA-SBZ" secondAttribute="trailing" constant="-20" id="FgR-zP-001"/>
                             <constraint firstItem="IIS-zA-SBZ" firstAttribute="top" secondItem="5rH-lf-Mvs" secondAttribute="topMargin" id="GN9-pb-BXI"/>
                             <constraint firstItem="9zf-pg-sRc" firstAttribute="centerX" secondItem="5rH-lf-Mvs" secondAttribute="centerX" id="Igv-fg-hkw"/>
                             <constraint firstItem="z0h-qP-YXw" firstAttribute="centerX" secondItem="5rH-lf-Mvs" secondAttribute="centerX" id="K71-J3-L6V"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DxB-eO-ACs" secondAttribute="trailing" constant="-20" id="LoO-RA-3nr"/>
                             <constraint firstItem="mOe-Cz-Xhf" firstAttribute="centerX" secondItem="5rH-lf-Mvs" secondAttribute="centerX" id="OSw-JR-jVs"/>
                             <constraint firstItem="daJ-4A-cch" firstAttribute="top" secondItem="mOe-Cz-Xhf" secondAttribute="bottom" constant="7" id="PsP-Rx-7EA"/>
                             <constraint firstItem="Aaw-gr-p9b" firstAttribute="top" secondItem="z0h-qP-YXw" secondAttribute="bottom" constant="57" id="R4c-2P-WAa"/>
@@ -439,11 +442,13 @@
                             <constraint firstItem="HpH-xP-26z" firstAttribute="top" secondItem="daJ-4A-cch" secondAttribute="bottom" constant="11" id="UYb-Sz-4HY"/>
                             <constraint firstItem="HpH-xP-26z" firstAttribute="centerX" secondItem="5rH-lf-Mvs" secondAttribute="centerX" id="WJJ-YW-K4D"/>
                             <constraint firstItem="GEf-NZ-LmO" firstAttribute="centerX" secondItem="5rH-lf-Mvs" secondAttribute="centerX" id="avd-9e-Wn9"/>
+                            <constraint firstItem="DxB-eO-ACs" firstAttribute="top" secondItem="BCl-kh-LTc" secondAttribute="bottom" constant="6" id="dnB-Vn-TkN"/>
                             <constraint firstItem="Mh0-bx-uFF" firstAttribute="centerX" secondItem="5rH-lf-Mvs" secondAttribute="centerX" id="dtr-3Z-G79"/>
                             <constraint firstItem="daJ-4A-cch" firstAttribute="centerX" secondItem="5rH-lf-Mvs" secondAttribute="centerX" id="f1K-0N-DfE"/>
                             <constraint firstItem="mOe-Cz-Xhf" firstAttribute="top" secondItem="Aaw-gr-p9b" secondAttribute="bottom" constant="7" id="frD-QM-hLi"/>
                             <constraint firstItem="lhG-3Y-9od" firstAttribute="top" secondItem="g2D-UU-7lB" secondAttribute="bottom" constant="20" id="gDg-1C-zhk"/>
                             <constraint firstItem="BCl-kh-LTc" firstAttribute="centerX" secondItem="5rH-lf-Mvs" secondAttribute="centerX" id="gcq-X6-hKa"/>
+                            <constraint firstItem="DxB-eO-ACs" firstAttribute="leading" secondItem="5rH-lf-Mvs" secondAttribute="leadingMargin" constant="-20" id="hHi-5V-o2k"/>
                             <constraint firstItem="BCl-kh-LTc" firstAttribute="top" secondItem="HpH-xP-26z" secondAttribute="bottom" constant="35" id="lXJ-y1-jli"/>
                             <constraint firstItem="z0h-qP-YXw" firstAttribute="top" secondItem="IIS-zA-SBZ" secondAttribute="bottom" constant="28" id="s93-LF-Gfa"/>
                         </constraints>

@@ -20,6 +20,11 @@ class MyMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVie
     var latitudeDelta = 1.0
     var longitudeDelta = 1.0
     var PinsAnnotationArr = [MKPointAnnotation]()
+    var locationsArr = [
+        ["latitude": "37.377034", "longitude": "-121.912302", "title": "Coding Dojo", "subtitle": "Coding Hackathon Party"],
+        ["latitude": "37.421385", "longitude": "-122.088882", "title": "GooglePlex", "subtitle": "Google Coding Party"],
+        ["latitude": "37.422799", "longitude": "-122.070514", "title": "LinkedIn", "subtitle": "LinkedIn Networking Party"]
+    ]
     
     var dummylocation1Flag = false
     var dummylocation2Flag = false
@@ -28,20 +33,18 @@ class MyMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVie
     
     @IBOutlet weak var dummyLocation1: UIBarButtonItem!
     @IBAction func dummyLocation1Pressed(sender: UIBarButtonItem) {
-        if !dummylocation1Flag
+        for location in locationsArr
         {
-            self.addPinsToMap(37.377034, longitude: -121.912302, title: "Coding Dojo", subtitle: "Coding Hackathon Party")
+            let latitude = Double(location["latitude"]!)
+            let longitude = Double(location["longitude"]!)
+            let title = String(location["title"]!)
+            let subtitle = String(location["subtitle"]!)
+            addPinsToMap(latitude!, longitude: longitude!, title: title, subtitle: subtitle)
         }
-        dummylocation1Flag = true
+        
+        
     }
     
-    @IBAction func dummyLocation2Pressed(sender: UIBarButtonItem) {
-        if !dummylocation2Flag
-        {
-            self.addPinsToMap(37.421385, longitude: -122.088882, title: "GooglePlex", subtitle: "Google Coding Party")
-        }
-        dummylocation2Flag = true
-    }
     
     @IBAction func zoomIn(sender: UIBarButtonItem) {
         latitudeDelta *= 0.1
