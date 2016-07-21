@@ -10,7 +10,8 @@ import UIKit
 import CoreLocation
 
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+
+class MyLocationViewController: UIViewController, CLLocationManagerDelegate {
 
     let locationManager = CLLocationManager()
     let geocoder = CLGeocoder()
@@ -22,7 +23,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func getCurrentLocation(sender: UIButton) {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
-        print("button pressed")
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
@@ -46,8 +46,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             
             if placemarks!.count > 0 {
                 let pm = placemarks![0]
-                print(pm.locality)
-                print(pm.addressDictionary)
+                
+                // print(pm.addressDictionary)
                 let street = pm.addressDictionary!["Street"]
                 let city = pm.addressDictionary!["City"]
                 let state = pm.addressDictionary!["State"]
@@ -67,7 +67,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.delegate = self
         // 2
         locationManager.requestAlwaysAuthorization()
-        print("done with init")
+        print("in MyLocation")
     }
 
     

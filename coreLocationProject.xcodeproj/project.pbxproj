@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5257BD51D408CDB0093C310 /* locationDelegateClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5257BD41D408CDB0093C310 /* locationDelegateClass.swift */; };
 		A52F639C1D40404E0044BFEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52F639B1D40404E0044BFEC /* AppDelegate.swift */; };
-		A52F639E1D40404E0044BFEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52F639D1D40404E0044BFEC /* ViewController.swift */; };
+		A52F639E1D40404E0044BFEC /* MyLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52F639D1D40404E0044BFEC /* MyLocationViewController.swift */; };
 		A52F63A11D40404E0044BFEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52F639F1D40404E0044BFEC /* Main.storyboard */; };
 		A52F63A41D40404E0044BFEC /* coreLocationProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A52F63A21D40404E0044BFEC /* coreLocationProject.xcdatamodeld */; };
 		A52F63A61D40404E0044BFEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A52F63A51D40404E0044BFEC /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 		A52F63B41D40404E0044BFEC /* coreLocationProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52F63B31D40404E0044BFEC /* coreLocationProjectTests.swift */; };
 		A52F63BF1D40404E0044BFEC /* coreLocationProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52F63BE1D40404E0044BFEC /* coreLocationProjectUITests.swift */; };
 		A52F63CD1D4040AE0044BFEC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52F63CC1D4040AE0044BFEC /* MapKit.framework */; };
+		A52F63CF1D407C6A0044BFEC /* MyMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52F63CE1D407C6A0044BFEC /* MyMapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,9 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A5257BD41D408CDB0093C310 /* locationDelegateClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = locationDelegateClass.swift; sourceTree = "<group>"; };
 		A52F63981D40404D0044BFEC /* coreLocationProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coreLocationProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A52F639B1D40404E0044BFEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A52F639D1D40404E0044BFEC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A52F639D1D40404E0044BFEC /* MyLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLocationViewController.swift; sourceTree = "<group>"; };
 		A52F63A01D40404E0044BFEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A52F63A31D40404E0044BFEC /* coreLocationProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coreLocationProject.xcdatamodel; sourceTree = "<group>"; };
 		A52F63A51D40404E0044BFEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 		A52F63BE1D40404E0044BFEC /* coreLocationProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coreLocationProjectUITests.swift; sourceTree = "<group>"; };
 		A52F63C01D40404E0044BFEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A52F63CC1D4040AE0044BFEC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A52F63CE1D407C6A0044BFEC /* MyMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +108,10 @@
 			isa = PBXGroup;
 			children = (
 				A52F639B1D40404E0044BFEC /* AppDelegate.swift */,
-				A52F639D1D40404E0044BFEC /* ViewController.swift */,
+				A52F639D1D40404E0044BFEC /* MyLocationViewController.swift */,
+				A5257BD41D408CDB0093C310 /* locationDelegateClass.swift */,
 				A52F639F1D40404E0044BFEC /* Main.storyboard */,
+				A52F63CE1D407C6A0044BFEC /* MyMapViewController.swift */,
 				A52F63A51D40404E0044BFEC /* Assets.xcassets */,
 				A52F63A71D40404E0044BFEC /* LaunchScreen.storyboard */,
 				A52F63AA1D40404E0044BFEC /* Info.plist */,
@@ -268,9 +274,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A52F639E1D40404E0044BFEC /* ViewController.swift in Sources */,
+				A52F639E1D40404E0044BFEC /* MyLocationViewController.swift in Sources */,
 				A52F63A41D40404E0044BFEC /* coreLocationProject.xcdatamodeld in Sources */,
+				A5257BD51D408CDB0093C310 /* locationDelegateClass.swift in Sources */,
 				A52F639C1D40404E0044BFEC /* AppDelegate.swift in Sources */,
+				A52F63CF1D407C6A0044BFEC /* MyMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +505,7 @@
 				A52F63C51D40404E0044BFEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A52F63C61D40404E0044BFEC /* Build configuration list for PBXNativeTarget "coreLocationProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +514,7 @@
 				A52F63C81D40404E0044BFEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A52F63C91D40404E0044BFEC /* Build configuration list for PBXNativeTarget "coreLocationProjectUITests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +523,7 @@
 				A52F63CB1D40404E0044BFEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
