@@ -8,5 +8,5 @@
 
 import UIKit
 protocol AddMeetUpButtonDelegate: class {
-    func addMeetUpButtonPressedFrom(controller: UIViewController)
+    func addMeetUpButtonPressedFrom(controller: UIViewController, meetup:[String:String])
 }

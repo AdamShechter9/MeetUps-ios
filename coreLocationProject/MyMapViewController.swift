@@ -16,6 +16,7 @@ class MyMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVie
     let locationManager = CLLocationManager()
     let geocoder = CLGeocoder()
     let placemark = CLPlacemark()
+    var tempCoord = CLLocationCoordinate2D()
     
     var latitudeDelta = 1.0
     var longitudeDelta = 1.0
@@ -33,15 +34,7 @@ class MyMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVie
     
     @IBOutlet weak var dummyLocation1: UIBarButtonItem!
     @IBAction func dummyLocation1Pressed(sender: UIBarButtonItem) {
-        for location in locationsArr
-        {
-            let latitude = Double(location["latitude"]!)
-            let longitude = Double(location["longitude"]!)
-            let title = String(location["title"]!)
-            let subtitle = String(location["subtitle"]!)
-            addPinsToMap(latitude!, longitude: longitude!, title: title, subtitle: subtitle)
-        }
-        
+
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -56,8 +49,30 @@ class MyMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVie
     func cancelButtonPressedFrom(controller: UIViewController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
-    func addMeetUpButtonPressedFrom(controller: UIViewController) {
+    func addMeetUpButtonPressedFrom(controller: UIViewController, meetup: [String:String]) {
+        print(meetup["address"])
+        geocoder.geocodeAddressString(meetup["address"]!)
+        {
+            (placemarks, error) -> Void in
+            
+            if let firstPlacemark = placemarks?[0] {
+                print("decoding address")
+                let latitude = firstPlacemark.location?.coordinate.latitude
+                let longitude = firstPlacemark.location?.coordinate.longitude
+                self.tempCoord = (firstPlacemark.location?.coordinate)!
+            }
+            let latitude = self.tempCoord.latitude
+            let longitude = self.tempCoord.longitude
+            let title = String(meetup["title"]!)
+            let subtitle = String(meetup["subtitle"]!)
+            // locationsArr.append(meetup)
+            print("meetup \(meetup)")
+            print("latitude \(latitude)    longitude \(longitude)       title \(title)      subtitle  \(subtitle)")
+            self.addPinsToMap(latitude, longitude: longitude, title: title, subtitle: subtitle)
+        }
         dismissViewControllerAnimated(true, completion: nil)
+        
+        
     }
     @IBAction func zoomIn(sender: UIBarButtonItem) {
         latitudeDelta *= 0.1
@@ -93,8 +108,14 @@ class MyMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVie
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         
-        // self.addPinsToMap(37.421385, longitude: -122.088882, title: "GooglePlex", subtitle: "Google Coding Party")
-        // self.addPinsToMap(37.377034, longitude: -121.912302, title: "Coding Dojo", subtitle: "Coding Hackathon Party")
+        for location in locationsArr
+        {
+            let latitude = Double(location["latitude"]!)
+            let longitude = Double(location["longitude"]!)
+            let title = String(location["title"]!)
+            let subtitle = String(location["subtitle"]!)
+            addPinsToMap(latitude!, longitude: longitude!, title: title, subtitle: subtitle)
+        }
     }
     
     func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
@@ -112,6 +133,8 @@ class MyMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVie
         print(newLocation[0].coordinate.longitude)
         // latitudeLabel.text = String(newLocation[0].coordinate.latitude)
         // longitudeLabel.text = String(newLocation[0].coordinate.longitude)
+        
+        
         
         geocoder.reverseGeocodeLocation(newLocation[0], completionHandler: {
             (placemarks, error) -> Void in
@@ -158,6 +181,7 @@ class MyMapViewController: UIViewController, CLLocationManagerDelegate, MKMapVie
     func addPinsToMap(latitude: Double, longitude: Double, title: String, subtitle: String)
     {
         print("in addPinsToMap")
+        print("latitude \(latitude)    longitude \(longitude)    title \(title)        subtitle  \(subtitle)")
         var annotationCoord = CLLocationCoordinate2D()
         var annotationPoint = MKPointAnnotation()
 
